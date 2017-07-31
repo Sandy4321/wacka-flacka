@@ -4,13 +4,21 @@
 #import tensorflow as tf 
 import pandas as pd 
 
-DATA_FILE = '~/Data/ipinyou/1458/train.log.txt'
-train = pd.read_csv(DATA_FILE, sep = "/t")
-print("The various axes of the dataframe are: ", train.axes)
+#DATA_FILE = '~/Data/ipinyou/1458/train.log.txt'
+# train = pd.read_csv(DATA_FILE, sep = "/t")
+# df = train.head()
+# df.to_csv('./data/train.txt')
+
+# Step 1. Extract data to frame 
+
+data = pd.read_csv('./data/train.txt', engine = 'python')
+columns = data.columns
+print(data.describe)
+print(columns)
+
 
 """
 <<-------------------------------------------------------->>
-TO DO: create dataframe and convert to variables
-TO DO: save dataframe and convert to binary files ,perhaps test with heads
-
+TO DO: create dataframe, extract and convert all variables
+TO DO: save dataframe as binary files
 """
