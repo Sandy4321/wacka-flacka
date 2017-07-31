@@ -158,7 +158,7 @@ def feature_selection_imps(file_path):
 
 	return 
 
-feature_selection_imps(TEST_PATH)
+feature_selection_imps(TRAIN_PATH)
 
 
 """
