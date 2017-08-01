@@ -1,8 +1,9 @@
 import csv
+import pickle
 import pandas as pd 
 
 TEST_PATH = "./data/mini_test.txt"
-TRAIN_PATH = "../../Data/ipinyou/1458/train.log.txt"
+TRAIN_PATH = "~/Data/ipinyou/1458/train.log.txt"
 
 # <<-------------------------------------------------------->>
 # Step 1. Data Pre-Processing
@@ -36,6 +37,7 @@ def feature_selection_imps(file_path):
 				  'paying_price']
 	matrix.append(header)	
 
+	print("...Reading file now...")
 	with open(file_path) as file:
 		csv_reader = csv.reader(file, delimiter = '\t')
 		for row in csv_reader:
@@ -151,11 +153,17 @@ def feature_selection_imps(file_path):
 					  paying_price]
 			matrix.append(vector)
 
+	print("...Finished reading...")
+	print("...Converting to dataframe...")
 	df = pd.DataFrame(matrix)
 	df.columns = matrix[0]
 	df = df.ix[1:]
+
+	# Serialize the dataframe
+	print("...Serializing dataframe...")
+	df.to_pickle('./data/df.pickle')
 	print(df.describe())
 
 	return 
 
-
+feature_selection_imps(TRAIN_PATH)
