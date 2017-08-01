@@ -158,11 +158,4 @@ def feature_selection_imps(file_path):
 
 	return 
 
-feature_selection_imps(TEST_PATH)
 
-
-"""
-<<-------------------------------------------------------->>
-TO DO: create dataframe, extract and convert all variables
-TO DO: save dataframe as binary files
-"""
