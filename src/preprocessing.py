@@ -1,9 +1,10 @@
+import os
 import csv
 import pickle
 import pandas as pd 
 
 TEST_PATH = "./data/mini_test.txt"
-TRAIN_PATH = "~/Data/ipinyou/1458/train.log.txt"
+TRAIN_PATH = "../../Data/ipinyou/1458/train.log.txt"
 
 # <<-------------------------------------------------------->>
 # Step 1. Data Pre-Processing
