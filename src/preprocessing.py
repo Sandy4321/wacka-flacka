@@ -28,6 +28,7 @@ def feature_selection_imps(file_path):
 				  'windows',
 				  'linux',
 				  'region_id',
+				  'city_id',
 				  'ad_exchange',
 				  'domain',
 				  'ad_slot_id',
@@ -77,7 +78,7 @@ def feature_selection_imps(file_path):
 			minute = timestamp[10:12]
 
 
-			if 'Chome' in useragent:
+			if 'chome' in useragent:
 				browser_chrome = 1
 			else:
 				browser_chrome = 0
@@ -87,17 +88,17 @@ def feature_selection_imps(file_path):
 			else:
 				browser_ie = 0
 
-			if 'Safari' in useragent:
+			if 'safari' in useragent:
 				browser_safari = 1
 			else:
 				browser_safari = 0
 
-			if 'Firefox' in useragent:
+			if 'firefox' in useragent:
 				browser_firefox = 1
 			else:
 				browser_firefox = 0
 			
-			if 'Mobile' in useragent:
+			if 'mobile' in useragent:
 				mobile = 1
 			else:
 				mobile = 0
@@ -144,6 +145,7 @@ def feature_selection_imps(file_path):
 					  windows,
 					  linux,
 					  region_id,
+					  city_id,
 					  ad_exchange,
 					  domain,
 					  ad_slot_id,
@@ -168,3 +170,8 @@ def feature_selection_imps(file_path):
 	return 
 
 feature_selection_imps(TRAIN_PATH)
+
+"""
+#changes: 
+- added city_id to vector
+"""
